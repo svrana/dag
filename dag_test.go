@@ -183,6 +183,16 @@ func TestDAG_DeleteEdge(t *testing.T) {
 	if size != 0 {
 		t.Fatalf("Dag expected to have 0 edges but got %d", size)
 	}
+
+	outDegree := vertex1.OutDegree()
+	if outDegree != 0 {
+		t.Fatalf("Vertex %s expected to have 0 outgoing edges but got %d", vertex1.ID, outDegree)
+	}
+	inDegree := vertex2.InDegree()
+	if inDegree != 0 {
+		t.Fatalf("Vertex %s expected to have 0 incoming edges but got %d", vertex2.ID, inDegree)
+	}
+
 }
 
 func TestDAG_GetVertex(t *testing.T) {

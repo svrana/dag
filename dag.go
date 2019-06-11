@@ -118,6 +118,11 @@ func (d *DAG) DeleteEdge(tailVertex *Vertex, headVertex *Vertex) error {
 			tailVertex.Children.Remove(childVertex)
 		}
 	}
+	for _, parentVertex := range headVertex.Parents.Values() {
+		if parentVertex == tailVertex {
+			headVertex.Parents.Remove(parentVertex)
+		}
+	}
 
 	return nil
 }
