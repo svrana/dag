@@ -20,7 +20,7 @@ package dag_test
 import (
 	"testing"
 
-	"github.com/goombaio/dag"
+	"github.com/svrana/dag"
 )
 
 func TestDAG(t *testing.T) {
